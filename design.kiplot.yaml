@@ -1,0 +1,219 @@
+# Example KiPlot config file   
+kiplot:
+  version: 1
+
+preflight:
+  run_erc: false
+  update_xml: true
+  run_drc: false
+  check_zone_fills: false
+  ignore_unconnected: false
+
+#global:
+   #output: '%p-%I_%r_%d.%x'
+
+outputs:
+
+#Plot SCH / PCB
+  - name: 'print_sch'
+    comment: "Print schematic (PDF)"
+    type: pdf_sch_print
+    dir: .
+    options:
+      output: Schematic.pdf
+
+  - name: 'print_front'
+    comment: "Print F.Cu+F.SilkS"
+    type: pdf_pcb_print
+    dir: .
+    options:
+      output: PCB_Sheet_Top.pdf
+    output_id: PCB_Top
+    layers:
+      - layer: F.Cu
+      - layer: F.SilkS
+  
+  - name: 'print_back'
+    comment: "Print B.Cu+B.SilkS"
+    type: pdf_pcb_print
+    dir: .
+    options:
+      output: PCB_Sheet_Back.pdf
+    layers:
+      - layer: B.Cu
+      - layer: B.SilkS
+  
+# Bom's
+  - name: 'interactive_bom'
+    comment: "Interactive Bill of Materials (HTML)"
+    type: ibom
+    dir: .
+    options:
+      blacklist: 'DNF*'
+      output: 'iBoM.html'
+
+  - name: 'bom_csv_release'
+    comment: "Bill of Materials in CSV format" 
+    type: bom
+    dir: .
+    options:
+      format: CSV
+      output: BoM-long.csv
+      hide_pcb_info: false
+      hide_stats_info: false
+
+  - name: 'bom_csv_upload'
+    comment: "Bill of Materials in CSV format" 
+    type: bom
+    dir: BoM
+    options:
+      format: CSV
+      output: design-bom.csv
+      hide_pcb_info: false
+      hide_stats_info: false
+
+#PCBDraw
+  - name: pcb_top_b
+    comment: "PCB render top blue "
+    type: pcbdraw
+    #dir: PCB
+    options:
+      format: png
+      style: set-blue-enig
+      show_components: none
+      dpi: 600
+      output: PCBdraw_Top.png
+
+  - name: pcb_bottom_b
+    comment: "PCB render bottom blue "
+    type: pcbdraw
+    #dir: PCB
+    options:
+      format: png
+      style: set-blue-enig
+      bottom: True
+      show_components: none
+      dpi: 600
+      output: PCBdraw_Back.png
+
+#3D
+  - name: step
+    comment: "Generate 3D model (STEP)"
+    type: step
+    dir: .
+    options:
+      output: 3D.step
+      metric_units: true
+      download: true
+      kicad_3d_url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/'
+
+  - name: 3dview
+    comment: "Generate render from 3D model"
+    type: render_3d
+    dir: .
+    options:
+      metric_units: true
+      download: true
+      kicad_3d_url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/'
+      orthographic: true
+      zoom: 7
+
+#Diffs
+  - name: 'diff_pcb'
+    comment: "PCB difference with git HEAD"
+    type: diff
+    layers: ['F.Cu', 'B.Cu']
+    options:
+      old: KIBOT_LAST-1
+      old_type: git
+      new: HEAD
+      new_type: git
+      cache_dir: .cache
+      add_link_id: true
+      diff_mode: red_green
+  
+  - name: 'diff_pcb_tag'
+    comment: "PCB difference with git Tag"
+    type: diff
+    layers: ['F.Cu', 'B.Cu']
+    options:
+      old: v0.40
+      old_type: git
+      new: HEAD
+      new_type: git
+      cache_dir: .cache
+      add_link_id: true
+      diff_mode: red_green
+      output: 'TAG.pdf'
+
+  - name: 'diff_sch'
+    comment: "SCH difference with git HEAD"
+    type: diff
+    options:
+      old: KIBOT_LAST-1
+      old_type: git
+      new: HEAD
+      new_type: git
+      cache_dir: .cache
+      add_link_id: true
+      diff_mode: red_green
+      pcb: false
+
+#Gerber
+  - name: 'gerbers'
+    comment: "Gerbers for the board house"
+    type: gerber
+    dir: Gerber
+    options:
+      # generic layer options
+      exclude_edge_layer: true
+      exclude_pads_from_silkscreen: false
+      use_aux_axis_as_origin: false
+      plot_sheet_reference: false
+      plot_footprint_refs: true
+      plot_footprint_values: true
+      force_plot_invisible_refs_vals: false
+      tent_vias: true
+      check_zone_fills: true
+
+      # gerber options
+      line_width: 0.1
+      subtract_mask_from_silk: false
+      use_protel_extensions: false
+      gerber_precision: 4.6
+      create_gerber_job_file: true
+      use_gerber_x2_attributes: true
+      use_gerber_net_attributes: true
+
+    layers: all
+      # - layer: F.Cu
+      #   suffix: F_Cu
+      # - layer: B.Cu
+      #   suffix: B_Cu
+      # - layer: F.Paste
+      #   suffix: F_Paste
+      # - layer: B.Paste
+      #   suffix: B_Paste
+      # - layer: F.SilkS
+      #   suffix: F_SilkS
+      # - layer: B.SilkS
+      #   suffix: B_SilkS
+      # - layer: F.Mask
+      #   suffix: F_Mask
+      # - layer: B.Mask
+      #   suffix: B_Mask
+      # - layer: Dwgs.User
+      #   suffix: Dwgs_User
+      # - layer: Edge.Cuts
+      #   suffix: Edge_Cuts
+      # - layer: F.Fab
+      #   suffix: F_Fab
+      # - layer: B.Fab
+      #   suffix: B_Fab
+
+  - name: gerber_drills
+    comment: "Gerber drill files"
+    type: gerb_drill
+    dir: Gerber
+    options:
+      use_aux_axis_as_origin: false

@@ -1,0 +1,22 @@
+Check before releasing and/or submitting to FAB
+- [ ] DRC/ERC passing
+- [ ] check for unconnected Traces
+- [ ] Groundplanes (newly) filled
+- [ ] Dimension Outline
+- [ ] Mounting Holes
+- [ ] Clearance for Connectors
+- [ ] Clearance for Housing
+- [ ] Clearance for generell
+- [ ] Component Labels
+- [ ] Labels not over VIA or Holes etc. 
+- [ ] Label Important (All) Pins — Both Sides
+- [ ] Revision number of Checklist will match the Git tag
+- [ ] Double check the final files
+- [ ] Fill Changelog (release_note.md)
+- [ ] projekt.properties filled correctly
+- [ ] Weblink / version / Date / name present SCH
+- [ ] Weblink / version / Date / name present PCB
+- [ ] Power Trace correct width
+- [ ] decoupling capacitors present
+- [ ] component orientation correct (MCU, Diod, etc)
+
