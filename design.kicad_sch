@@ -4250,7 +4250,7 @@
   (symbol (lib_name "WS2812B-2020_3") (lib_id "Snapeda:WS2812B-2020") (at 170.18 96.52 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 8193e1c7-4a32-4dd0-b340-04b4f152db23)
-    (property "Reference" "LED2" (id 0) (at 182.88 88.9 0))
+    (property "Reference" "LED3" (id 0) (at 182.88 88.9 0))
     (property "Value" "WS2812B-2020" (id 1) (at 182.88 91.44 0))
     (property "Footprint" "Snapeda:WS2812B2020" (id 2) (at 170.18 96.52 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
@@ -4436,7 +4436,7 @@
   (symbol (lib_name "WS2812B-2020_1") (lib_id "Snapeda:WS2812B-2020") (at 203.2 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a699136c-48ec-4ed7-8f59-a9803eabcc6e)
-    (property "Reference" "LED3" (id 0) (at 215.9 68.58 0))
+    (property "Reference" "LED2" (id 0) (at 215.9 68.58 0))
     (property "Value" "WS2812B-2020" (id 1) (at 215.9 71.12 0))
     (property "Footprint" "Snapeda:WS2812B2020" (id 2) (at 203.2 76.2 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
@@ -5375,10 +5375,10 @@
     (path "/be5d4d29-c7d2-4c92-a91e-3f85187a2fa5"
       (reference "LED1") (unit 1) (value "WS2812B-2020") (footprint "Snapeda:WS2812B2020")
     )
-    (path "/8193e1c7-4a32-4dd0-b340-04b4f152db23"
+    (path "/a699136c-48ec-4ed7-8f59-a9803eabcc6e"
       (reference "LED2") (unit 1) (value "WS2812B-2020") (footprint "Snapeda:WS2812B2020")
     )
-    (path "/a699136c-48ec-4ed7-8f59-a9803eabcc6e"
+    (path "/8193e1c7-4a32-4dd0-b340-04b4f152db23"
       (reference "LED3") (unit 1) (value "WS2812B-2020") (footprint "Snapeda:WS2812B2020")
     )
     (path "/b27a28f6-ec7e-4b38-910d-095565e648cf"
