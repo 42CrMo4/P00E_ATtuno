@@ -1,8 +1,21 @@
 # KiCad ATtuno Dev board
 
+The ATtuno is a dev board for ATtiny 1 series microcontroller, loosely based on the UNO form factor. 
+
 ## Description
 
- Dev board for ATtiny 1 series MCUs, loosely based on the UNO form factor. 
+The ATtuno is an excellent starting point for those looking to explore the ATtiny 1 series microcontroller platform. 
+Inspired by the familiar Arduino Uno form factor, this board offers a user-friendly approach to working with ATtiny Series 1 MCUs.
+Key features:
+
+- Arduino Uno-inspired layout
+- Generous board size for comfortable handling
+- Robust Wago clamping pin headers for secure connections
+- Designed for quick start and rapid prototyping
+- 3.3V and 5V compatible
+
+This dev board bridges the gap between the popular Arduino ecosystem and the powerful, efficient ATtiny Series 1 microcontrollers. Its thoughtful design allows both beginners and experienced makers to quickly dive into projects without the need for delicate handling or specialized tools.
+Would you like me to expand on any specific aspects of the board or its potential applications?
 
 ### Goal
 
@@ -13,11 +26,13 @@ The goal of the project will be:
 - [ ] **80-20-rule** - 80% outcome with 20% effort
 - [ ] **Product** - lets see :wink:
 
-## Rendering 
+## Rendering & BOM
+
+The renderings and BOM below are the uptodate state of the main branche.
+If you are looking for the latest Release please visit the ![Release Page](https://github.com/42CrMo4/P00E_ATtuno/releases)
 
 | Font                                                                    | Back                                                                      |
 |-------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | ![PCB Top design](../../blob/documentation/Fabrication/PCBdraw_Top.png) | ![PCB Back design](../../blob/documentation/Fabrication/PCBdraw_Back.png) |
 
 ![Link to the current BOM](../../tree/documentation/Fabrication/BoM)
-
