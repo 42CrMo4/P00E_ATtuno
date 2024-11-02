@@ -1,0 +1,78 @@
+name: KiCad 3D Model Checker
+
+on:
+  push:
+    paths:
+      - '**.kicad_pcb'
+      - '**.kicad_sch'
+  pull_request:
+    paths:
+      - '**.kicad_pcb'
+      - '**.kicad_sch'
+
+jobs:
+  check-3d-models:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check 3D models
+        run: |
+          python3 - <<EOF
+          import os
+          import sys
+          import re
+          
+          def find_kicad_files(directory):
+              """Find all KiCad PCB files in the directory."""
+              for root, _, files in os.walk(directory):
+                  for file in files:
+                      if file.endswith('.kicad_pcb'):
+                          yield os.path.join(root, file)
+          
+          def extract_3d_models(pcb_file):
+              """Extract 3D model paths from KiCad PCB file."""
+              models = []
+              with open(pcb_file, 'r', encoding='utf-8') as f:
+                  content = f.read()
+                  # Look for 3D model paths in the format: (model "${KIPRJMOD}/3d-models/...)
+                  pattern = r'\(model "\${KIPRJMOD}/3d-models/([^"]+)"'
+                  matches = re.finditer(pattern, content)
+                  for match in matches:
+                      models.append(match.group(1))
+              return models
+          
+          def check_3d_models_exist(models, project_dir):
+              """Check if 3D models exist in the 3d-models directory."""
+              missing_models = []
+              for model in models:
+                  model_path = os.path.join(project_dir, '3d-models', model)
+                  if not os.path.exists(model_path):
+                      missing_models.append(model)
+              return missing_models
+          
+          # Main execution
+          project_dir = os.getcwd()
+          all_missing_models = []
+          
+          for pcb_file in find_kicad_files(project_dir):
+              print(f"Checking PCB file: {pcb_file}")
+              models = extract_3d_models(pcb_file)
+              missing = check_3d_models_exist(models, project_dir)
+              all_missing_models.extend(missing)
+          
+          if all_missing_models:
+              print("\nMissing 3D models:")
+              for model in sorted(set(all_missing_models)):
+                  print(f"  - {model}")
+              sys.exit(1)
+          else:
+              print("\nAll 3D models are present!")
+              sys.exit(0)
+          EOF
