@@ -712,7 +712,7 @@
 
   (footprint "TestPoint:TestPoint_Pad_D2.5mm" (layer "F.Cu")
     (tedit 5A0F774F) (tstamp 2abecf10-4e88-49eb-a54d-4ae9e0362604)
-    (at 153.2 69.2)
+    (at 153.6 69.2)
     (descr "SMD pad as test Point, diameter 2.5mm")
     (tags "test point SMD pad")
     (property "Sheetfile" "design.kicad_sch")
