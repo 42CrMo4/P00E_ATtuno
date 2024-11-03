@@ -16,4 +16,4 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   call-workflow-passing-data:
-    uses: 42CrMo4/KiCad_Workflows/.github/workflows/rc_release.yml@v6.0
+    uses: 42CrMo4/KiCad_Workflows/.github/workflows/rc_release.yml@v6.x
