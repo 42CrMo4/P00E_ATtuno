@@ -116,7 +116,7 @@ outputs:
       download: true
       kicad_3d_url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/'
       orthographic: true
-      zoom: 7
+      zoom: 5
 
 #Diffs
   - name: 'diff_pcb'
