@@ -4455,7 +4455,7 @@
   (gr_text "ATtiny\n416/816/1616/3216" (at 113.5 104.5) (layer "B.SilkS") (tstamp 3223ceaa-6d74-4c02-a35f-f6b288dc3365)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
-  (gr_text "20/16 MHz Internal (4.5v-5.5v)\n10/8 MHz Internal (2.7v-5.5v)\n5/4/2/1 MHz Internal (1.8v-5.5v)" (at 150.5 104.8) (layer "B.SilkS") (tstamp a3fcdbec-81ed-4c99-910e-c5d42e1b778e)
+  (gr_text "20/16 MHz Internal (4.5v-5.5v)\n10/8 MHz Internal (2.7v-5.5v)\n5/4/2/1 MHz Internal (1.8v-5.5v)" (at 150.5 104.5) (layer "B.SilkS") (tstamp a3fcdbec-81ed-4c99-910e-c5d42e1b778e)
     (effects (font (size 1 1) (thickness 0.15)) (justify left mirror))
   )
   (gr_text "<<project_name>>\n<<ID>>\n<<version>>\n<<date>>\n<<hash>>" (at 133 93.1) (layer "B.SilkS") (tstamp db2ece89-8ae6-4182-9241-50ae4c827b71)
