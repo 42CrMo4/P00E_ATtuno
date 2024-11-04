@@ -13,7 +13,7 @@ def find_kicad_pcb_files(directory):
     return found_files
 
 def find_missing_3d_models(kicad_pcb_file):
-    missing_models = []
+    missing_models = set()
     project_dir = os.path.dirname(kicad_pcb_file)
 
     with open(kicad_pcb_file, 'r') as f:
@@ -29,7 +29,7 @@ def find_missing_3d_models(kicad_pcb_file):
             relative_path = model.replace("${KIPRJMOD}/3d-models/", "")
             full_path = os.path.join(project_dir, "3d-models", relative_path)
             if not os.path.exists(full_path):
-                missing_models.append(relative_path)
+                missing_models.add(relative_path)
 
     return missing_models
 
@@ -37,11 +37,10 @@ def main():
     project_dir = os.getcwd()
     kicad_pcb_files = find_kicad_pcb_files(project_dir)
 
-    all_missing_models = []
+    all_missing_models = set()
     for kicad_pcb_file in kicad_pcb_files:
         missing_models = find_missing_3d_models(kicad_pcb_file)
-        if missing_models:
-            all_missing_models.extend(missing_models)
+        all_missing_models.update(missing_models)
 
     if all_missing_models:
         print("The following 3D models are missing:")
