@@ -5,10 +5,12 @@ on:
     paths:
       - '**.kicad_pcb'
       - '**.kicad_sch'
+      - '**.yml'
   pull_request:
     paths:
       - '**.kicad_pcb'
       - '**.kicad_sch'
+      - '**.yml'
 
 jobs:
   check-3d-models:
