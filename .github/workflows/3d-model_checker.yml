@@ -6,11 +6,13 @@ on:
       - '**.kicad_pcb'
       - '**.kicad_sch'
       - '**.yml'
+      - '**.py'
   pull_request:
     paths:
       - '**.kicad_pcb'
       - '**.kicad_sch'
       - '**.yml'
+      - '**.py'
 
 jobs:
   check-3d-models:
