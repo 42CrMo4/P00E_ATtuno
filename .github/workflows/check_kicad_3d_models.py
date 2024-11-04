@@ -4,7 +4,7 @@ import sys
 
 def find_missing_3d_models(project_dir):
     missing_models = []
-    kicad_pcb_file = os.path.join(project_dir, "project.kicad_pcb")
+    kicad_pcb_file = os.path.join(project_dir, "design.kicad_pcb")
     if not os.path.exists(kicad_pcb_file):
         print("Error: project.kicad_pcb not found in the project directory.")
         sys.exit(1)
