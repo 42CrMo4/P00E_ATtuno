@@ -50,34 +50,37 @@ jobs:
                       content = f.read()
                       print(f"[DEBUG] File size: {len(content)} bytes")
                       
-                      # Print a sample of the content for debugging
-                      print("[DEBUG] First 200 characters of file:")
-                      print(content[:200])
+                      # Find model entries and print them for debugging
+                      print("\n[DEBUG] Raw model entries found:")
+                      model_sections = re.finditer(r'\(model[^)]+\)', content, re.DOTALL)
+                      for section in model_sections:
+                          print(f"  {section.group(0)}")
                       
-                      # Look for 3D model paths with KIPRJMOD
-                      kiprjmod_pattern = r'\(model "\${KIPRJMOD}\/3d-models\/([^"]+)"'
-                      matches = re.finditer(kiprjmod_pattern, content)
-                      
-                      # Count all model entries including KIPRJMOD for debugging
-                      kiprjmod_models = re.findall(kiprjmod_pattern, content)
-                      all_models_pattern = r'\(model "[^"]+"'
-                      all_models = re.findall(all_models_pattern, content)
-                      
-                      print(f"[DEBUG] Total model entries found: {len(all_models)}")
-                      print(f"[DEBUG] KIPRJMOD model entries found: {len(kiprjmod_models)}")
-                      print("[DEBUG] All model paths found:")
-                      for model in all_models:
-                          print(f"  {model}")
+                      # Reset file pointer and process models
+                      kiprjmod_pattern = r'\(model\s+"\${KIPRJMOD}/3d-models/([^"]+)"'
+                      matches = re.finditer(kiprjmod_pattern, content, re.MULTILINE)
                       
                       print("\n[DEBUG] KIPRJMOD model paths found:")
-                      for model_path in kiprjmod_models:
+                      for match in matches:
+                          model_path = match.group(1)
+                          print(f"  Found: ${KIPRJMOD}/3d-models/{model_path}")
                           models.append(model_path)
-                          print(f"  ${KIPRJMOD}/3d-models/{model_path}")
+                      
+                      # Count different types of models
+                      kiprjmod_count = len(re.findall(r'\${KIPRJMOD}', content))
+                      kicad_3rd_party_count = len(re.findall(r'\${KICAD_3RD_PARTY}', content))
+                      kicad_3dmodel_count = len(re.findall(r'\${KICAD6_3DMODEL_DIR}', content))
+                      
+                      print("\n[DEBUG] Model count by type:")
+                      print(f"  KIPRJMOD models: {kiprjmod_count}")
+                      print(f"  KICAD_3RD_PARTY models: {kicad_3rd_party_count}")
+                      print(f"  KICAD6_3DMODEL_DIR models: {kicad_3dmodel_count}")
+                      
               except Exception as e:
                   print(f"[ERROR] Failed to process file {pcb_file}: {str(e)}")
                   raise
               
-              print(f"[DEBUG] Number of matching 3D models found: {len(models)}")
+              print(f"\n[DEBUG] Number of matching 3D models to check: {len(models)}")
               return models
           
           def check_3d_models_exist(models, project_dir):
