@@ -2,12 +2,19 @@ import os
 import re
 import sys
 
-def find_missing_3d_models(project_dir):
+def find_kicad_pcb_files(directory):
+    """Find all KiCad PCB files in the directory."""
+    found_files = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.kicad_pcb'):
+                found_files.append(os.path.join(root, file))
+    print(f"\n[DEBUG] Found KiCad PCB files: {found_files}")
+    return found_files
+
+def find_missing_3d_models(kicad_pcb_file):
     missing_models = []
-    kicad_pcb_file = os.path.join(project_dir, "design.kicad_pcb")
-    if not os.path.exists(kicad_pcb_file):
-        print("Error: project.kicad_pcb not found in the project directory.")
-        sys.exit(1)
+    project_dir = os.path.dirname(kicad_pcb_file)
 
     with open(kicad_pcb_file, 'r') as f:
         content = f.read()
@@ -28,11 +35,17 @@ def find_missing_3d_models(project_dir):
 
 def main():
     project_dir = os.getcwd()
-    missing_models = find_missing_3d_models(project_dir)
+    kicad_pcb_files = find_kicad_pcb_files(project_dir)
 
-    if missing_models:
+    all_missing_models = []
+    for kicad_pcb_file in kicad_pcb_files:
+        missing_models = find_missing_3d_models(kicad_pcb_file)
+        if missing_models:
+            all_missing_models.extend(missing_models)
+
+    if all_missing_models:
         print("The following 3D models are missing:")
-        for model in missing_models:
+        for model in all_missing_models:
             print(f"- {model}")
         sys.exit(1)
     else:
