@@ -52,13 +52,13 @@ jobs:
                       
                       # Find model entries and print them for debugging
                       print("\n[DEBUG] Raw model entries found:")
-                      model_sections = re.finditer(r'\(model[^)]+\)', content, re.DOTALL)
+                      model_sections = re.finditer(r'\(model[^)]+\)', content)
                       for section in model_sections:
                           print(f"  {section.group(0)}")
                       
                       # Reset file pointer and process models
                       kiprjmod_pattern = r'\(model\s+"\${KIPRJMOD}/3d-models/([^"]+)"'
-                      matches = re.finditer(kiprjmod_pattern, content, re.MULTILINE)
+                      matches = re.finditer(kiprjmod_pattern, content)
                       
                       print("\n[DEBUG] KIPRJMOD model paths found:")
                       for match in matches:
