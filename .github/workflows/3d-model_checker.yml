@@ -34,4 +34,4 @@ jobs:
 
     - name: Check KiCad 3D Models
       run: |
-        python .github/workflows/check_kicad_3d_models.py
+        python .github/workflows/scripts/check_kicad_3d_models.py
