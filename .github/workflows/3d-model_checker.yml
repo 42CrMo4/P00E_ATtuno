@@ -54,7 +54,7 @@ jobs:
                       
                       # Look for 3D model paths in the format: (model "${KIPRJMOD}/3d-models/...)
                       pattern = r'\(model "\${KIPRJMOD}\/3d-models\/([^"]+)"'
-                      matches = re.finditer(pattern, content)
+                      matches = re.findall(pattern, content)
                       
                       # Count all model entries for debugging
                       all_models_pattern = r'\(model "[^"]+"'
