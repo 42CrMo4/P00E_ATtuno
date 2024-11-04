@@ -54,24 +54,25 @@ jobs:
                       print("[DEBUG] First 200 characters of file:")
                       print(content[:200])
                       
-                      # Look for 3D model paths in the format: (model "${KIPRJMOD}/3d-models/...)
-                      pattern = r'\(model "\${KIPRJMOD}\/3d-models\/([^"]+)"'
-                      matches = re.findall(pattern, content)
-                      for match in matches:
-                          print(f"  {match}")
+                      # Look for 3D model paths with KIPRJMOD
+                      kiprjmod_pattern = r'\(model "\${KIPRJMOD}\/3d-models\/([^"]+)"'
+                      matches = re.finditer(kiprjmod_pattern, content)
                       
-                      # Count all model entries for debugging
+                      # Count all model entries including KIPRJMOD for debugging
+                      kiprjmod_models = re.findall(kiprjmod_pattern, content)
                       all_models_pattern = r'\(model "[^"]+"'
                       all_models = re.findall(all_models_pattern, content)
+                      
                       print(f"[DEBUG] Total model entries found: {len(all_models)}")
+                      print(f"[DEBUG] KIPRJMOD model entries found: {len(kiprjmod_models)}")
                       print("[DEBUG] All model paths found:")
                       for model in all_models:
                           print(f"  {model}")
                       
-                      for match in matches:
-                          model_path = match.group(1)
+                      print("\n[DEBUG] KIPRJMOD model paths found:")
+                      for model_path in kiprjmod_models:
                           models.append(model_path)
-                          print(f"[DEBUG] Found model path: {model_path}")
+                          print(f"  ${KIPRJMOD}/3d-models/{model_path}")
               except Exception as e:
                   print(f"[ERROR] Failed to process file {pcb_file}: {str(e)}")
                   raise
@@ -88,10 +89,12 @@ jobs:
               if os.path.exists(models_dir):
                   print("[DEBUG] Contents of 3d-models directory:")
                   for root, dirs, files in os.walk(models_dir):
-                      for item in dirs:
-                          print(f"  DIR: {item}")
-                      for item in files:
-                          print(f"  FILE: {item}")
+                      level = root.replace(models_dir, '').count(os.sep)
+                      indent = '  ' * (level + 1)
+                      print(f"{indent}Directory: {os.path.basename(root)}/")
+                      subindent = '  ' * (level + 2)
+                      for f in files:
+                          print(f"{subindent}File: {f}")
               
               missing_models = []
               for model in models:
