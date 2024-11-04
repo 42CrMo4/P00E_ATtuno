@@ -15,138 +15,21 @@ on:
 jobs:
   check-3d-models:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-      - name: Check 3D models
-        run: |
-          python3 - <<EOF
-          import os
-          import sys
-          import re
-          
-          def find_kicad_files(directory):
-              """Find all KiCad PCB files in the directory."""
-              found_files = []
-              for root, _, files in os.walk(directory):
-                  for file in files:
-                      if file.endswith('.kicad_pcb'):
-                          found_files.append(os.path.join(root, file))
-              print(f"\n[DEBUG] Found KiCad PCB files: {found_files}")
-              return found_files
-          
-          def extract_3d_models(pcb_file):
-              """Extract 3D model paths from KiCad PCB file."""
-              models = []
-              print(f"\n[DEBUG] Reading PCB file: {pcb_file}")
-              try:
-                  with open(pcb_file, 'r', encoding='utf-8') as f:
-                      content = f.read()
-                      
-                      # Fix newlines for consistent processing
-                      content = content.replace('\r\n', '\n')
-                      
-                      print("\n[DEBUG] Processing model entries:")
-                      # First, find all complete model sections
-                      sections = []
-                      stack = []
-                      current_section = ""
-                      for char in content:
-                          if char == '(':
-                              stack.append(len(current_section))
-                          elif char == ')':
-                              if stack:
-                                  start = stack.pop()
-                                  if not stack and current_section[start:].startswith('(model '):
-                                      sections.append(current_section[start:] + char)
-                          current_section += char
-                      
-                      print("\n[DEBUG] Found model sections:")
-                      for section in sections:
-                          print(f"---\n{section}\n---")
-                      
-                      # Now extract KIPRJMOD paths
-                      kiprjmod_pattern = r'\(model\s+"(\${KIPRJMOD}/3d-models/[^"]+)"'
-                      for section in sections:
-                          match = re.search(kiprjmod_pattern, section)
-                          if match:
-                              full_path = match.group(1)
-                              model_path = full_path.replace('${KIPRJMOD}/3d-models/', '')
-                              print(f"[DEBUG] Found KIPRJMOD model: {full_path}")
-                              models.append(model_path)
-                      
-                      print("\n[DEBUG] Summary of found models:")
-                      print(f"Total model sections: {len(sections)}")
-                      print(f"KIPRJMOD models to check: {len(models)}")
-                      for model in models:
-                          print(f"  - {model}")
-                              
-              except Exception as e:
-                  print(f"[ERROR] Failed to process file {pcb_file}: {str(e)}")
-                  raise
-              
-              return models
-          
-          def check_3d_models_exist(models, project_dir):
-              """Check if 3D models exist in the 3d-models directory."""
-              models_dir = os.path.join(project_dir, '3d-models')
-              print(f"\n[DEBUG] Checking models in directory: {models_dir}")
-              print(f"[DEBUG] Directory exists: {os.path.exists(models_dir)}")
-              
-              if os.path.exists(models_dir):
-                  print("[DEBUG] Contents of 3d-models directory:")
-                  for root, dirs, files in os.walk(models_dir):
-                      level = root.replace(models_dir, '').count(os.sep)
-                      indent = '  ' * (level + 1)
-                      print(f"{indent}Directory: {os.path.basename(root)}/")
-                      subindent = '  ' * (level + 2)
-                      for f in files:
-                          print(f"{subindent}File: {f}")
-              
-              missing_models = []
-              for model in models:
-                  model_path = os.path.join(project_dir, '3d-models', model)
-                  print(f"[DEBUG] Checking model path: {model_path}")
-                  if not os.path.exists(model_path):
-                      print(f"[DEBUG] Missing model: {model_path}")
-                      missing_models.append(model)
-                  else:
-                      print(f"[DEBUG] Found model: {model_path}")
-              return missing_models
-          
-          # Main execution
-          print("\n=== KiCad 3D Model Checker ===")
-          project_dir = os.getcwd()
-          print(f"[DEBUG] Project directory: {project_dir}")
-          print("[DEBUG] Directory contents:")
-          for item in os.listdir(project_dir):
-              print(f"  {item}")
-          
-          all_missing_models = []
-          pcb_files = find_kicad_files(project_dir)
-          
-          if not pcb_files:
-              print("[ERROR] No KiCad PCB files found!")
-              sys.exit(1)
-          
-          for pcb_file in pcb_files:
-              print(f"\n[INFO] Checking PCB file: {pcb_file}")
-              models = extract_3d_models(pcb_file)
-              missing = check_3d_models_exist(models, project_dir)
-              all_missing_models.extend(missing)
-          
-          if all_missing_models:
-              print("\n[ERROR] Missing 3D models:")
-              for model in sorted(set(all_missing_models)):
-                  print(f"  - {model}")
-              sys.exit(1)
-          else:
-              print("\n[SUCCESS] All 3D models are present!")
-              sys.exit(0)
-          EOF
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+
+    - name: Check KiCad 3D Models
+      run: |
+        python .github/workflows/check_kicad_3d_models.py
