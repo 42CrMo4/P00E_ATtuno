@@ -4551,7 +4551,7 @@
   (gr_text "PC1\n〜\nD" (at 141.75 82.25) (layer "F.SilkS") (tstamp 5d1c0c28-8632-4fac-9314-5896e6a23214)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text "In 1.8V-5V\nWS2812 5V" (at 145.3 94.1) (layer "F.SilkS") (tstamp 5d7de1db-57f5-4540-9aa7-e703971e2310)
+  (gr_text "In 1.8V-5V\nWS2812 5V" (at 145.4 94.5) (layer "F.SilkS") (tstamp 5d7de1db-57f5-4540-9aa7-e703971e2310)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (gr_text "Power Rail Status" (at 97.5 93.6625) (layer "F.SilkS") (tstamp 67590ac1-298b-4692-9ef2-a8d9d7322485)
