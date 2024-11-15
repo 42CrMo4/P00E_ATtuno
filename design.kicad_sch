@@ -8713,7 +8713,7 @@
   (symbol (lib_id "power:GND") (at 271.78 203.2 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid cc5fd905-24ad-457d-947c-2c2437ded00b)
-    (property "Reference" "#PWR?" (id 0) (at 271.78 209.55 0)
+    (property "Reference" "#PWR0190" (id 0) (at 271.78 209.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 271.78 208.28 0))
@@ -8834,7 +8834,7 @@
   (symbol (lib_id "Device:C_Small") (at 266.7 215.9 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d80388e9-556a-442b-9d58-9f39d8934e6e)
-    (property "Reference" "C?" (id 0) (at 269.24 214.6362 0)
+    (property "Reference" "C8" (id 0) (at 269.24 214.6362 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4,7uF" (id 1) (at 269.24 217.1762 0)
@@ -9685,7 +9685,7 @@
       (reference "#PWR0189") (unit 1) (value "GND") (footprint "")
     )
     (path "/cc5fd905-24ad-457d-947c-2c2437ded00b"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0190") (unit 1) (value "GND") (footprint "")
     )
     (path "/5005112b-a25c-4019-a0f7-bec67dd371e4"
       (reference "C1") (unit 1) (value "1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -9709,7 +9709,7 @@
       (reference "C7") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d80388e9-556a-442b-9d58-9f39d8934e6e"
-      (reference "C?") (unit 1) (value "4,7uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C8") (unit 1) (value "4,7uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/5ec38a02-a145-4acb-a554-76dbb10c2abb"
       (reference "D1") (unit 1) (value "Red") (footprint "LED_SMD:LED_0805_2012Metric")
