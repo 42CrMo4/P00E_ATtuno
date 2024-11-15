@@ -22,14 +22,21 @@ Its thoughtful design allows both beginners and experienced makers to quickly di
 The goal of the project will be:
 - [ ] **undefined** - not known what the project will bring 
 - [ ] **learn** - personally learn something new, no usefull outcome expected
-- [x] **prototype** - a working prototype or mvp
-- [ ] **80-20-rule** - 80% outcome with 20% effort
+- [ ] **prototype** - a working prototype or mvp
+- [x] **80-20-rule** - 80% outcome with 20% effort
 - [ ] **Product** - lets see :wink:
 
-## Rendering & BOM
+## Rendering (V2.0)
+
+|     Font      |     Back      |
+| ------------- | ------------- |
+|![PCB Top design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v2.0/P00E_ATtuno_v2.0_PCBdraw_Top.png)|![PCB Back design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v2.0/P00E_ATtuno_v2.0_PCBdraw_Back.png)|
+
+If you are looking for the latest Release with all the artifacts please visit the ![Release Page](https://github.com/42CrMo4/P00E_ATtuno/releases)
+
+## Rendering & BOM (Dev)
 
 The renderings and BOM below are the uptodate state of the main branche.
-If you are looking for the latest Release please visit the ![Release Page](https://github.com/42CrMo4/P00E_ATtuno/releases)
 
 | Font                                                                    | Back                                                                      |
 |-------------------------------------------------------------------------|---------------------------------------------------------------------------|
