@@ -14,8 +14,8 @@ Key features:
 - Designed for quick start and rapid prototyping
 - 3.3V and 5V compatible
 
-This dev board bridges the gap between the popular Arduino ecosystem and the powerful, efficient ATtiny Series 1 microcontrollers. Its thoughtful design allows both beginners and experienced makers to quickly dive into projects without the need for delicate handling or specialized tools.
-Would you like me to expand on any specific aspects of the board or its potential applications?
+This dev board bridges the gap between the popular Arduino ecosystem and the powerful, efficient ATtiny Series 1 microcontrollers. 
+Its thoughtful design allows both beginners and experienced makers to quickly dive into projects without the need for delicate handling or specialized tools.
 
 ### Goal
 
