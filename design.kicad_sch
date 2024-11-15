@@ -4643,6 +4643,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 914c5e6e-0964-479a-83d3-6a863f5b7ce4)
   )
+  (text "close if slide switch not populated \nand programming only via the usb."
+    (at 154.94 256.54 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b54a14a8-6190-4d06-844b-9067718228dd)
+  )
   (text "PA1  TX_MCU\nPA2  RX_MCU" (at 251.46 256.54 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid bb2e8325-df49-4c74-af98-b73e8423600e)
