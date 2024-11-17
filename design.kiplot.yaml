@@ -12,6 +12,9 @@ preflight:
 #global:
    #output: '%p-%I_%r_%d.%x'
 
+import:
+  - file: JLCPCB
+
 outputs:
 
 #Plot SCH / PCB
