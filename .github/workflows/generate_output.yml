@@ -91,9 +91,9 @@ jobs:
         sed -i "s!<<date>>!$(date +'%Y-%m-%d')!" *.kicad_sch 
         sed -i "s!<<ID>>!${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_sch
 
-    - name: Run Schematic and BOM 
-      run: |
-        [ -f *.kicad_sch ] && kiplot  -d Fabrication_temp -s all
+    #- name: Run Schematic and BOM 
+    #  run: |
+    #    [ -f *.kicad_sch ] && kiplot  -d Fabrication_temp -s all 
     
     - name: Update the PCBs with the git hash
       run: |
@@ -105,7 +105,7 @@ jobs:
 
     - name: Run PCB stuff
       run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s all pcb_top_b pcb_bottom_b 3dview diff_pcb #print_front print_back 
+        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s all -g variant=SOIC
 
     - name: Rename the Schematic and PCB Raw Files
       run: |
