@@ -11185,7 +11185,7 @@
       (reference "U3") (unit 1) (value "CP2105") (footprint "Snapeda:CP2105_QFN24_0.5")
     )
     (path "/97d29fb2-5067-4abe-b773-06fc2b347f32"
-      (reference "U4") (unit 1) (value "ATtiny1616-M") (footprint "Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm")
+      (reference "U4") (unit 1) (value "ATtiny1616-M") (footprint "Snapeda:ATTINY1616-MFR_QFN40P300X300X90-21N")
     )
   )
 )
