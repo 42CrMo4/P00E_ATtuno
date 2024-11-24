@@ -134,20 +134,6 @@ outputs:
       cache_dir: .cache
       add_link_id: true
       diff_mode: red_green
-  
-  - name: 'diff_pcb_tag'
-    comment: "PCB difference with git Tag"
-    type: diff
-    layers: ['F.Cu', 'B.Cu']
-    options:
-      old: v0.40
-      old_type: git
-      new: HEAD
-      new_type: git
-      cache_dir: .cache
-      add_link_id: true
-      diff_mode: red_green
-      output: 'TAG.pdf'
 
   - name: 'diff_sch'
     comment: "SCH difference with git HEAD"
