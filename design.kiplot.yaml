@@ -12,6 +12,17 @@ preflight:
 #global:
    #output: '%p-%I_%r_%d.%x'
 
+variants:
+  - name: 'default'
+    comment: 'QFN not THT'
+    type: kibom
+
+  - name: 'SOIC'
+    comment: 'ATtiny SOIC version'
+    type: kibom
+    file_id: _SOIC
+    variant: SOIC
+
 import:
   - file: JLCPCB
 
