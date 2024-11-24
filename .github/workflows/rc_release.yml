@@ -15,5 +15,117 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  call-workflow-passing-data:
-    uses: 42CrMo4/KiCad_Workflows/.github/workflows/rc_release.yml@v6.x
+  ERC:
+    runs-on: ubuntu-latest
+    container: ghcr.io/inti-cmnb/kicad6_auto:1.8.2
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run ERC
+      run: |
+        [ -f *.kicad_sch ] && kiplot  -d Fabrication_temp -s update_xml,run_drc -i
+    # - name: Retrieve results
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: ERC_Output
+    #     path: Fabrication_temp
+
+  DRC:
+    runs-on: ubuntu-latest
+    container: ghcr.io/inti-cmnb/kicad6_auto:1.8.2
+    needs: ERC
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run DRC
+      run: |
+        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s update_xml,run_erc -i
+    # - name: Retrieve results
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: DRC_Output
+    #     path: Fabrication_temp
+    
+  Fabrication:
+    name: Fabrication files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    container: ghcr.io/inti-cmnb/kicad6_auto:1.8.2
+    needs: DRC
+
+    steps:
+    - name: Update system repositories, Install Required Libraries
+      run: |
+        apt update
+        apt -y install git
+    
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Assign variables from project.properties to Env variable
+      run: |
+        cat project.properties | egrep -v "^\s*(#|$)" >> $GITHUB_ENV 
+    
+    - name: Update the Schematic with the git hash
+      run: |
+        export COMMIT=$(git rev-parse --short HEAD)
+        echo "COMMIT = ${COMMIT}"
+        sed -i "s!<<hash>>!Git-${COMMIT}!" *.kicad_sch
+        sed -i "s!<<project_name>>!${{ env.project_name }}!" *.kicad_sch
+        sed -i "s!<<date>>!$(date +'%Y-%m-%d')!" *.kicad_sch 
+        sed -i "s!<<version>>!${{ github.ref_name }}!" *.kicad_sch 
+        sed -i "s!<<ID>>!ID:${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_sch
+        mv *.kicad_sch ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ github.ref_name }}.kicad_sch
+
+    - name: Update the PCBs with the git hash
+      run: |
+        export COMMIT=$(git rev-parse --short HEAD)
+        echo "COMMIT = ${COMMIT}"
+        sed -i "s!<<hash>>!Git-${COMMIT}!" *.kicad_pcb
+        sed -i "s!<<project_name>>!${{ env.project_name }}!" *.kicad_pcb
+        sed -i "s!<<date>>!$(date +'%Y-%m-%d')!" *.kicad_pcb 
+        sed -i "s!<<version>>!${{ github.ref_name }}!" *.kicad_pcb 
+        sed -i "s!<<ID>>!ID:${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_pcb
+        sed -i "s!<<website_link>>!${{ env.Website_link }}/${{ env.ID_prefix }}/${{ env.ID }}!" *.kicad_pcb 
+        mv *.kicad_pcb ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ github.ref_name }}.kicad_pcb
+
+    - name: Update the release note with the RepoName / Tag
+      run: |
+        sed -i "s!<<repo_name>>!${{ github.repository }}!g" docs/release_note.md
+        sed -i "s!<<tag>>!${{ github.ref_name }}!g" docs/release_note.md
+        sed -i "s!<<project_name>>!${{ env.project_name }}!g" docs/release_note.md
+        sed -i "s!<<version>>!${{ github.ref_name }}!g" docs/release_note.md
+        sed -i "s!<<ID>>!${{ env.ID_prefix }}${{ env.ID }}!g" docs/release_note.md
+
+    - name: Run Schematic and BOM 
+      run: |
+        [ -f *.kicad_sch ] && kiplot -d Fabrication_temp -s all  print_sch interactive_bom 
+
+    - name: Run PCB
+      run: |
+        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s all print_front print_back pcb_top_b pcb_bottom_b step
+
+    - name: Run Gerber
+      run: |
+        [ -f *.kicad_pcb ] && kiplot  -d Gerber -s all gerbers gerber_drills JLCPCB
+
+    - name: Renaming Files
+      run: |
+        cd Fabrication_temp
+        for file in *; do mv -v ${file} ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ github.ref_name }}_${file}; done #https://unix.stackexchange.com/a/389516
+
+    - uses: vimtor/action-zip@v1.2
+      with:
+        files: Gerber/
+        recursive: false
+        dest: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ github.ref_name }}_Gerber.zip
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "Fabrication_temp/*, *.kicad_sch, *.kicad_pcb, *Gerber.zip " # Fabrication_temp/BoM/*ibom*, *.kicad_sch, Gerber.zip, *.kicad_pcb, Fabrication_temp/3D/*.step, Fabrication_temp/PCB/blue/*"
+        bodyFile: "docs/release_note.md"
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
