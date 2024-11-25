@@ -27,7 +27,7 @@ on:
 jobs:
   ERC-DRC:
     runs-on: ubuntu-latest
-    container: ghcr.io/inti-cmnb/kicad8_auto:1.8.2
+    container: ghcr.io/inti-cmnb/kicad6_auto:1.8.2
 
     steps:
     - uses: actions/checkout@v4
