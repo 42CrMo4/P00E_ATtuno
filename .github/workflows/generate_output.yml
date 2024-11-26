@@ -137,8 +137,8 @@ jobs:
         done
         # mkdir PCB_Sheet
         # mv *Sheet.* PCB_Sheet/
-        mkdir BoM
-        mv *iBoM.* BoM/
+        #mkdir BoM
+        #mv *iBoM.* BoM/
 
     - name: Retrieve results
       uses: actions/upload-artifact@v4
