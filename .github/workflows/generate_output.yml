@@ -108,13 +108,13 @@ jobs:
       uses: mikefarah/yq@v4
       with:
         cmd: '.variants[].name'
-        file: '*.kibot.yaml'
+        file: '*.kiplot.yaml'
 
     - name: Run PCB stuff for all variants
       run: |
         if [ -f *.kicad_pcb ]; then
           for variant in ${{ steps.variants.outputs.result }}; do
-            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}"
+            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}" 3Dview
           done
         fi
 
