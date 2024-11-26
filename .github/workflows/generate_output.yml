@@ -107,8 +107,7 @@ jobs:
       id: variants
       uses: mikefarah/yq@v4
       with:
-        cmd: '.variants[].name'
-        file: 'design.kiplot.yaml'
+        cmd: yq e '.variants[].name' *.kiplot.yaml'.
 
     - name: Run PCB stuff for all variants
       run: |
