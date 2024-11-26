@@ -103,7 +103,7 @@ jobs:
         sed -i "s!<<website_link>>!${{ env.Website_link }}/${{ env.ID_prefix }}/${{ env.ID }}!" *.kicad_pcb 
         sed -i "s!<<ID>>!ID:${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_pcb 
 
-    - name: Extract variant names using yq  
+    - name: Extract variant names using yq
       id: extract_variants
       uses: mikefarah/yq@v4
       with:
@@ -113,11 +113,11 @@ jobs:
       run: |
         if [ -f *.kicad_pcb ]; then
           # Convert the output to an array
-          IFS=$'\n' read -r -d '' -a variant_array <<< "$steps.extract_variants.outputs.result"
+          IFS=$'\n' read -r -a variant_array <<< "$steps.extract_variants.outputs.result"
 
           # Loop through each variant and run kiplot
           for variant in "${variant_array[@]}"; do
-            kiplot -d "Fabrication_temp/$variant" -s all -g "variant=$variant" 3dview
+            kiplot -d "Fabrication_temp/$variant" -s all -g "variant=$variant"
           done
         else
           echo "No .kicad_pcb file found."
