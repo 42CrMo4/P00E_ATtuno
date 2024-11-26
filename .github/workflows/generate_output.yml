@@ -132,11 +132,11 @@ jobs:
       run: |
         cd Fabrication_temp
         #for file in *; do mv -v ${file} ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_${file}; done #https://unix.stackexchange.com/a/389516
-        find . -type f -exec sh -c 'mv -v "$0" "${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_$0"' {} \;
+        #find . -type f -exec sh -c 'mv -v "$0" "${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_$0"' {} \;
         # mkdir PCB_Sheet
         # mv *Sheet.* PCB_Sheet/
-        mkdir BoM
-        mv *iBoM.* BoM/
+        #mkdir BoM
+        #mv *iBoM.* BoM/
 
     - name: Retrieve results
       uses: actions/upload-artifact@v4
