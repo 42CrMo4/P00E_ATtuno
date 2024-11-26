@@ -105,10 +105,10 @@ jobs:
 
     - name: Install yq and jq
       run: |
-        sudo apt-get update
-        sudo apt-get install -y jq
-        sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
-        sudo chmod +x /usr/local/bin/yq
+        #apt update
+        #apt install -y jq
+        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+        chmod +x /usr/local/bin/yq
 
     - name: Run PCB stuff
       run: |
