@@ -26,6 +26,12 @@ variants:
 import:
   - file: JLCPCB
 
+groups:
+  - name: JLCPCB
+    outputs:
+      - _JLCPCB_compress 
+      - _JLCPCB_assembly
+
 outputs:
 
 #Plot SCH / PCB

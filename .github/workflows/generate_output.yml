@@ -105,8 +105,8 @@ jobs:
 
     - name: Run PCB stuff
       run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/SOIC -s all -g variant=SOIC _JLCPCB_compress _JLCPCB_assembly
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/default -s all -g variant=default
+        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/SOIC -s all -g variant=SOIC JLCPCB
+        #[ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/default -s all -g variant=default
 
     - name: Rename the Schematic and PCB Raw Files
       run: |
