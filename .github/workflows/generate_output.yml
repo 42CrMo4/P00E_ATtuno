@@ -68,10 +68,10 @@ jobs:
     # needs: ERC
 
     steps:
-    - name: Update system repositories, Install Required Libraries
-      run: |
-        apt update
-        apt -y install git
+    #- name: Update system repositories, Install Required Libraries
+    #  run: |
+    #    apt update
+    #    apt -y install git
     
     - name: Checkout Repository
       uses: actions/checkout@v4
@@ -107,7 +107,7 @@ jobs:
       id: variants
       uses: mikefarah/yq@v4
       with:
-        cmd: yq e '.variants[].name' *.kiplot.yaml'.
+        cmd: yq e '.variants[].name' *.kiplot.yaml
 
     - name: Run PCB stuff for all variants
       run: |
