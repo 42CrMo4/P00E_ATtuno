@@ -103,10 +103,26 @@ jobs:
         sed -i "s!<<website_link>>!${{ env.Website_link }}/${{ env.ID_prefix }}/${{ env.ID }}!" *.kicad_pcb 
         sed -i "s!<<ID>>!ID:${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_pcb 
 
+    - name: Install yq and jq
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq
+        sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+        sudo chmod +x /usr/local/bin/yq
+
     - name: Run PCB stuff
       run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/SOIC -s all -g variant=SOIC JLCPCB
-        #[ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp/default -s all -g variant=default
+        if [ -f *.kicad_pcb ]; then
+          # Extract variant names from *.kiplot.yml
+          variants=$(yq e '.variants[].name' *.kiplot.yml)
+
+          # Loop through each variant and run kiplot
+          for variant in $variants; do
+            kiplot -d "Fabrication_temp/$variant" -s all -g "variant=$variant 3dview"
+          done
+        else
+          echo "No .kicad_pcb file found."
+        fi
 
     - name: Rename the Schematic and PCB Raw Files
       run: |
