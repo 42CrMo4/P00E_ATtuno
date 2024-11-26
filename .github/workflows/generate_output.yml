@@ -70,8 +70,10 @@ jobs:
     steps:
     - name: Update system repositories, Install Required Libraries
       run: |
+        add-apt-repository ppa:rmescandon/yq
         apt update
         apt -y install git
+        apt install yq -y
     
     - name: Checkout Repository
       uses: actions/checkout@v4
