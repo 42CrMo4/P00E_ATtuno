@@ -128,7 +128,6 @@ jobs:
         name: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_Kicad_raw
         path: '${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}.kicad_*'
 
-    #- name: Renaming Files
     #  run: |
     #    cd Fabrication_temp
     #    for file in *; do mv -v ${file} ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_${file}; done #https://unix.stackexchange.com/a/389516
