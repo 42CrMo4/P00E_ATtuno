@@ -112,7 +112,7 @@ jobs:
     - name: Run PCB stuff for all variants
       run: |
         if [ -f *.kicad_pcb ]; then
-          for variant in ${{ steps.variants.outputs.result }}; do
+          for variant in $(echo "${{ steps.variants.outputs.result }}" | tr '\n' ' '); do
             kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}" 3Dview
           done
         fi
@@ -128,13 +128,15 @@ jobs:
         name: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_Kicad_raw
         path: '${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}.kicad_*'
 
-    #  run: |
-    #    cd Fabrication_temp
-    #    for file in *; do mv -v ${file} ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_${file}; done #https://unix.stackexchange.com/a/389516
-    #    # mkdir PCB_Sheet
-    #    # mv *Sheet.* PCB_Sheet/
-    #    mkdir BoM
-    #    mv *iBoM.* BoM/
+    - name: Renaming Files
+      run: |
+        cd Fabrication_temp
+        #for file in *; do mv -v ${file} ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_${file}; done #https://unix.stackexchange.com/a/389516
+        find . -type f -exec sh -c 'mv -v "$0" "${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_$0"' {} \;
+        # mkdir PCB_Sheet
+        # mv *Sheet.* PCB_Sheet/
+        mkdir BoM
+        mv *iBoM.* BoM/
 
     - name: Retrieve results
       uses: actions/upload-artifact@v4
