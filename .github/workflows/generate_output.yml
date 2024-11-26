@@ -107,7 +107,7 @@ jobs:
       id: extract_variants
       uses: mikefarah/yq@v4
       with:
-        cmd: yq e '.variants[].name' *.kiplot.yml
+        cmd: yq e '.variants[].name' *.kiplot.yaml
 
     - name: Run PCB stuff
       run: |
