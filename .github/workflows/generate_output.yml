@@ -113,7 +113,7 @@ jobs:
       run: |
         if [ -f *.kicad_pcb ]; then
           for variant in $(echo "${{ steps.variants.outputs.result }}" | tr '\n' ' '); do
-            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}" 3dview
+            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}"
           done
         fi
 
