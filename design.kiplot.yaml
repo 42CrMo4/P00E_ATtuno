@@ -165,7 +165,7 @@ outputs:
       diff_mode: red_green
       pcb: false
 
-  - name: 'diff_pcb'
+  - name: 'diff_pcb_v2.0'
     comment: "PCB difference with git HEAD"
     type: diff
     layers: ['F.Cu', 'B.Cu']
@@ -178,7 +178,7 @@ outputs:
       add_link_id: true
       diff_mode: red_green
 
-  - name: 'diff_sch'
+  - name: 'diff_sch_v2.0'
     comment: "SCH difference with git HEAD"
     type: diff
     options:
