@@ -25,6 +25,7 @@ variants:
 
 import:
   - file: JLCPCB
+  - file: PCBWAY
 
 groups:
   - name: JLCPCB
