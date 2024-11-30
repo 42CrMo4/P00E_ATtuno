@@ -165,6 +165,32 @@ outputs:
       diff_mode: red_green
       pcb: false
 
+  - name: 'diff_pcb'
+    comment: "PCB difference with git HEAD"
+    type: diff
+    layers: ['F.Cu', 'B.Cu']
+    options:
+      old: v2.0
+      old_type: git
+      new: HEAD
+      new_type: git
+      cache_dir: .cache
+      add_link_id: true
+      diff_mode: red_green
+
+  - name: 'diff_sch'
+    comment: "SCH difference with git HEAD"
+    type: diff
+    options:
+      old: v2.0
+      old_type: git
+      new: HEAD
+      new_type: git
+      cache_dir: .cache
+      add_link_id: true
+      diff_mode: red_green
+      pcb: false
+
 #Gerber
   - name: 'gerbers'
     comment: "Gerbers for the board house"
