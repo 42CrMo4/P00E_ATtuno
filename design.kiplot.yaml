@@ -178,7 +178,7 @@ outputs:
       cache_dir: .cache
       add_link_id: true
       diff_mode: red_green
-      output: Diff-v2.0-PCB
+      output: Diff-v2.0-PCB.pdf
 
   - name: 'diff_sch_v2.0'
     comment: "SCH difference with git HEAD"
@@ -192,7 +192,7 @@ outputs:
       add_link_id: true
       diff_mode: red_green
       pcb: false
-      output: Diff-v2.0-SCH
+      output: Diff-v2.0-SCH.pdf
 
 #Position Files
   - name: 'position'
