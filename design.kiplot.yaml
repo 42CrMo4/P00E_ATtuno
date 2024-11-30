@@ -200,7 +200,7 @@ outputs:
     type: position
     dir: Gerber
     options:
-      format: csv
+      format: CSV
 
 #Gerber
   - name: 'gerbers'
