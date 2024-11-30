@@ -1,22 +1,22 @@
 Check before releasing and/or submitting to FAB
-- [x] DRC/ERC passing
-- [x] check for unconnected Traces
-- [x] Groundplanes (newly) filled
-- [x] Dimension Outline
-- [x] Mounting Holes
-- [x] Clearance for Connectors
-- [x] Clearance for Housing
-- [x] Clearance for generell
-- [x] Component Labels
-- [x] Labels not over VIA or Holes etc. 
-- [x] Label Important (All) Pins — Both Sides
-- [x] Revision number of Checklist will match the Git tag
-- [x] Double check the final files
-- [x] Fill Changelog (release_note.md)
-- [x] projekt.properties filled correctly
-- [x] Weblink / version / Date / name present SCH
-- [x] Weblink / version / Date / name present PCB
-- [x] Power Trace correct width
-- [x] decoupling capacitors present
-- [x] component orientation correct (MCU, Diod, etc)
+- [ ] DRC/ERC passing
+- [ ] check for unconnected Traces
+- [ ] Groundplanes (newly) filled
+- [ ] Dimension Outline
+- [ ] Mounting Holes
+- [ ] Clearance for Connectors
+- [ ] Clearance for Housing
+- [ ] Clearance for generell
+- [ ] Component Labels
+- [ ] Labels not over VIA or Holes etc. 
+- [ ] Label Important (All) Pins — Both Sides
+- [ ] Revision number of Checklist will match the Git tag
+- [ ] Double check the final files
+- [ ] Fill Changelog (release_note.md)
+- [ ] projekt.properties filled correctly
+- [ ] Weblink / version / Date / name present SCH
+- [ ] Weblink / version / Date / name present PCB
+- [ ] Power Trace correct width
+- [ ] decoupling capacitors present
+- [ ] component orientation correct (MCU, Diod, etc)
 
