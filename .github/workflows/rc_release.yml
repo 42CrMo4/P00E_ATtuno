@@ -102,11 +102,11 @@ jobs:
 
     - name: Run Schematic and BOM 
       run: |
-        [ -f *.kicad_sch ] && kiplot -d Fabrication_temp -s all  print_sch interactive_bom 
+        [ -f *.kicad_sch ] && kiplot -d Fabrication_temp -s all -g variant=default print_sch interactive_bom 
 
     - name: Run PCB
       run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s all print_front print_back pcb_top_b pcb_bottom_b step
+        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp -s all -g variant=default print_front print_back pcb_top_b pcb_bottom_b step
 
     - name: Run Gerber
       run: |
