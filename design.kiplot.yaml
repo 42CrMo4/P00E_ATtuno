@@ -194,6 +194,14 @@ outputs:
       pcb: false
       output: Diff-v2.0-SCH
 
+#Position Files
+  - name: 'position'
+    comment: "position for the board house"
+    type: position
+    dir: Gerber
+    options:
+      format: csv
+
 #Gerber
   - name: 'gerbers'
     comment: "Gerbers for the board house"
