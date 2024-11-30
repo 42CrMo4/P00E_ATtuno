@@ -111,7 +111,7 @@ jobs:
 
     - name: Run Gerber
       run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Gerber -s all gerbers gerber_drills _JLCPCB_compress _JLCPCB_assembly _PCBWay_compress position
+        [ -f *.kicad_pcb ] && kiplot  -d Gerber -s all -g variant=default gerbers gerber_drills _JLCPCB_compress _JLCPCB_assembly _PCBWay_compress position
 
     - name: Renaming Files
       run: |
