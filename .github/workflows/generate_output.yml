@@ -90,11 +90,6 @@ jobs:
         sed -i "s!<<project_name>>!${{ env.project_name }}!" *.kicad_sch
         sed -i "s!<<date>>!$(date +'%Y-%m-%d')!" *.kicad_sch 
         sed -i "s!<<ID>>!${{ env.ID_prefix }}${{ env.ID }}!" *.kicad_sch
-
-    #- name: Run Schematic and BOM 
-    #  run: |
-    #    [ -f *.kicad_sch ] && kiplot  -d Fabrication_temp -s all 
-    
     - name: Update the PCBs with the git hash
       run: |
         sed -i "s!<<hash>>!Git-${{ env.COMMIT }}!" *.kicad_pcb
