@@ -26,11 +26,11 @@ The goal of the project will be:
 - [x] **80-20-rule** - 80% outcome with 20% effort
 - [ ] **Product** - lets see :wink:
 
-## Rendering (V2.0)
+## Rendering (V3.0)
 
 |     Font      |     Back      |
 | ------------- | ------------- |
-|![PCB Top design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v2.0/P00E_ATtuno_v2.0_PCBdraw_Top.png)|![PCB Back design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v2.0/P00E_ATtuno_v2.0_PCBdraw_Back.png)|
+|![PCB Top design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v3.0/P00E_ATtuno_v3.0_PCBdraw_Top.png)|![PCB Back design](https://github.com/42CrMo4/P00E_ATtuno/releases/download/v3.0/P00E_ATtuno_v3.0_PCBdraw_Back.png)|
 
 If you are looking for the latest Release with all the artifacts please visit the ![Release Page](https://github.com/42CrMo4/P00E_ATtuno/releases)
 
