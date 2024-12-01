@@ -102,7 +102,7 @@ jobs:
       run: |
         if [ -f *.kicad_pcb ]; then
           for variant in $(echo "${{ steps.variants.outputs.result }}" | tr '\n' ' '); do
-            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}"
+            kiplot -d "Fabrication_temp/${variant}" -s all -g "variant=${variant}" 
           done
         fi
 
@@ -135,14 +135,14 @@ jobs:
         name: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_Output
         path: 'Fabrication_temp'
 
-    - name: Run STEP
-      run: |
-        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp_step -s all step
-        cd Fabrication_temp_step
-        mv *.step ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}.step
-
-    - name: Retrieve results
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_Output_STEP
-        path: 'Fabrication_temp_step'
+#    - name: Run STEP
+#      run: |
+#        [ -f *.kicad_pcb ] && kiplot  -d Fabrication_temp_step -s all step
+#        cd Fabrication_temp_step
+#        mv *.step ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}.step
+#
+#    - name: Retrieve results
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: ${{ env.ID_prefix }}${{ env.ID }}_${{ env.project_name }}_${{ env.COMMIT }}_Output_STEP
+#        path: 'Fabrication_temp_step'
