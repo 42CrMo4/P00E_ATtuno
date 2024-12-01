@@ -16,12 +16,11 @@ variants:
   - name: 'default'
     comment: 'QFN not THT'
     type: kibom
-
-  - name: 'SOIC'
-    comment: 'ATtiny SOIC version'
-    type: kibom
-    file_id: _SOIC
-    variant: SOIC
+#  - name: 'SOIC'
+#    comment: 'ATtiny SOIC version'
+#    type: kibom
+#    file_id: _SOIC
+#    variant: SOIC
 
 import:
   - file: JLCPCB
@@ -46,7 +45,6 @@ groups:
       - 3dview
       - diff_pcb
       - diff_sch
-
 
 outputs:
 
