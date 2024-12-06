@@ -9,8 +9,6 @@ preflight:
   check_zone_fills: false
   ignore_unconnected: false
 
-_KIBOT_PLOT_FOOTPRINT_VALUES: true
-
 #global:
    #output: '%p-%I_%r_%d.%x'
 
