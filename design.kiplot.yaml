@@ -24,12 +24,14 @@ variants:
 
 import:
   - file: JLCPCB
+    option:
+      _KIBOT_PLOT_FOOTPRINT_VALUES: true
   - file: PCBWay
 
 groups:
   - name: JLCPCB
     outputs:
-      - _JLCPCB_compress 
+      - _JLCPCB_compress
       - _JLCPCB_assembly
   - name: generate_output
     outputs:
