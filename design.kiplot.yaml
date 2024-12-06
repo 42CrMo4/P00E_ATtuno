@@ -24,7 +24,7 @@ variants:
 
 import:
   - file: JLCPCB
-    option:
+    definitions:
       _KIBOT_PLOT_FOOTPRINT_VALUES: true
   - file: PCBWay
 
