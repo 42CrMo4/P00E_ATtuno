@@ -31,7 +31,7 @@ import:
 groups:
   - name: JLCPCB
     outputs:
-      - _JLCPCB_compress
+      - _JLCPCB_compress 
       - _JLCPCB_assembly
   - name: generate_output
     outputs:
