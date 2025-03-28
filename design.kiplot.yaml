@@ -286,12 +286,12 @@ outputs:
         download: true
         kicad_3d_url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/'
       render_options:
-        samples: 10
+        samples: 30
         resolution_x: 3072
         resolution_y: 1920
         transparent_background: true
       light:
-        energy: 1
+        energy: 5
         type: "AREA"
       outputs:
         type: "render"
