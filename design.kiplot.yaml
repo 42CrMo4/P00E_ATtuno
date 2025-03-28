@@ -47,6 +47,7 @@ groups:
       - 3dview
       - diff_pcb
       - diff_sch
+      - 3dview_render
 
 outputs:
 
