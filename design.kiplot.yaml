@@ -275,3 +275,22 @@ outputs:
     dir: Gerber
     options:
       use_aux_axis_as_origin: false
+
+  - name: 3dview_render
+    comment: "Generate render from 3D model from Blender"
+    type: blender_export
+    dir: Render
+    options:
+      pcb3d:
+        download: true
+        kicad_3d_url: 'https://gitlab.com/kicad/libraries/kicad-packages3D/-/raw/master/'
+      render_options:
+        samples: 10
+        resolution_x: 3072
+        resolution_y: 1920
+        transparent_background: true
+      light:
+        energy: 1
+        type: "AREA"
+      outputs:
+        type: "render"
