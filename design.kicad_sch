@@ -1378,6 +1378,266 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Interface_USB:TS3USB30ERSWR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -6.35 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TS3USB30ERSWR"
+				(at 8.89 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:UQFN-10_1.4x1.8mm_P0.4mm"
+				(at 24.13 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts3usb30e.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "ESD-Protected, High-Speed USB 2.0 (480-Mbps) 1:2 Multiplexer/Demultiplexer Switch With Single Enable, UQFN-10"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "usb mux"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "UQFN*1.4x1.8mm*P0.4mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TS3USB30ERSWR_1_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "D+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "D-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "~{OE}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "D1+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "D1-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "D2+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "D2-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Jumper:SolderJumper_2_Bridged"
 			(pin_names
 				(offset 0)
@@ -7612,12 +7872,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -7642,16 +7903,6 @@
 				)
 			)
 			(property "MOUSER_PRICE-STOCK" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "DESCRIPTION" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
@@ -8210,12 +8461,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -8240,16 +8492,6 @@
 				)
 			)
 			(property "MOUSER_PRICE-STOCK" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "DESCRIPTION" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
@@ -8510,12 +8752,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -8540,16 +8783,6 @@
 				)
 			)
 			(property "MOUSER_PRICE-STOCK" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "DESCRIPTION" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
@@ -8810,12 +9043,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -8840,16 +9074,6 @@
 				)
 			)
 			(property "MOUSER_PRICE-STOCK" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "DESCRIPTION" "LED; SMD; 2020; RGB; 2x2x0.84mm; 3.75.3V; Lens: transparent; 2kHz"
 				(at 0 0 0)
 				(effects
 					(font
@@ -9930,6 +10154,12 @@
 		(uuid "c5375bf0-6b94-4659-a121-3e5ac968f764")
 	)
 	(junction
+		(at 231.14 224.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c93312ea-8107-4f38-88e9-3aaea1d09071")
+	)
+	(junction
 		(at 224.155 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9960,8 +10190,16 @@
 		(uuid "f3e93591-a46f-4e80-b701-e7b606f89f79")
 	)
 	(no_connect
+		(at 201.93 247.65)
+		(uuid "1986f9a6-5e20-4f72-9125-38de1945447e")
+	)
+	(no_connect
 		(at 68.58 45.72)
 		(uuid "456200a9-bf9c-4f48-a8a4-cbc79d36ee72")
+	)
+	(no_connect
+		(at 201.93 234.95)
+		(uuid "498a6222-9f29-4fff-89b1-a69bba1a736a")
 	)
 	(no_connect
 		(at 33.02 40.64)
@@ -10537,6 +10775,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 224.79) (xy 231.14 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a2027f8-410e-43f3-8a4e-d7a9be7905b0")
+	)
+	(wire
+		(pts
 			(xy 350.52 190.5) (xy 350.52 198.12)
 		)
 		(stroke
@@ -10664,6 +10912,16 @@
 			(type default)
 		)
 		(uuid "43b5d407-9b43-49d6-8d51-a88a6ef4c30e")
+	)
+	(wire
+		(pts
+			(xy 212.09 227.33) (xy 201.93 227.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43c0faf4-a503-41f2-ad95-63da901a71da")
 	)
 	(wire
 		(pts
@@ -10897,6 +11155,16 @@
 	)
 	(wire
 		(pts
+			(xy 218.44 238.76) (xy 218.44 242.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "566e0dfb-0acd-4f74-9bdf-44bd1ba807fe")
+	)
+	(wire
+		(pts
 			(xy 193.04 111.76) (xy 198.12 111.76)
 		)
 		(stroke
@@ -11047,6 +11315,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 222.25) (xy 231.14 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "631091af-8325-453c-bdb0-af1fa29ee3e2")
+	)
+	(wire
+		(pts
 			(xy 193.04 119.38) (xy 193.04 121.92)
 		)
 		(stroke
@@ -11154,6 +11432,16 @@
 			(type default)
 		)
 		(uuid "6dc754d5-e30a-44dd-bd6e-515294dd9d69")
+	)
+	(wire
+		(pts
+			(xy 209.55 229.87) (xy 209.55 237.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f4223f8-da8f-48b1-b7b9-dbc7f6e99545")
 	)
 	(wire
 		(pts
@@ -11337,6 +11625,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 245.11) (xy 220.98 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bf394a5-ccf0-42a4-aa0e-7f605775aa77")
+	)
+	(wire
+		(pts
 			(xy 322.58 63.5) (xy 325.12 63.5)
 		)
 		(stroke
@@ -11354,6 +11652,16 @@
 			(type default)
 		)
 		(uuid "7e2604c1-a07c-4f72-a692-7f00d538dc66")
+	)
+	(wire
+		(pts
+			(xy 212.09 234.95) (xy 212.09 227.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ee4e90b-1691-4905-bac8-ac9f1987d517")
 	)
 	(wire
 		(pts
@@ -11457,6 +11765,16 @@
 	)
 	(wire
 		(pts
+			(xy 218.44 242.57) (xy 220.98 242.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83b196ed-f3e2-4f3e-becb-e4e91dc354d5")
+	)
+	(wire
+		(pts
 			(xy 116.84 180.34) (xy 116.84 182.88)
 		)
 		(stroke
@@ -11507,7 +11825,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.775 245.745) (xy 231.775 250.825)
+			(xy 154.94 233.68) (xy 154.94 238.76)
 		)
 		(stroke
 			(width 0)
@@ -11697,7 +12015,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.775 255.905) (xy 231.775 260.985)
+			(xy 154.94 243.84) (xy 154.94 248.92)
 		)
 		(stroke
 			(width 0)
@@ -11774,6 +12092,16 @@
 			(type default)
 		)
 		(uuid "9d8b68dd-ee2a-4290-9df4-e53b001bba2b")
+	)
+	(wire
+		(pts
+			(xy 220.98 234.95) (xy 212.09 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dd17cf2-557d-4eb1-aec0-7d1f6183a57b")
 	)
 	(wire
 		(pts
@@ -12037,6 +12365,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 224.79) (xy 254 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b80c0e37-11f6-4f35-a1d2-96245b9d5bc5")
+	)
+	(wire
+		(pts
 			(xy 350.52 48.26) (xy 350.52 55.88)
 		)
 		(stroke
@@ -12144,6 +12482,16 @@
 			(type default)
 		)
 		(uuid "bf28db0a-5931-415e-84c9-497308e3674e")
+	)
+	(wire
+		(pts
+			(xy 214.63 238.76) (xy 218.44 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfbd4b05-3f46-4146-bb9b-e6f6791e51a6")
 	)
 	(wire
 		(pts
@@ -12387,6 +12735,16 @@
 	)
 	(wire
 		(pts
+			(xy 209.55 237.49) (xy 220.98 237.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d588b626-bccb-4c52-903c-f426f9a1949c")
+	)
+	(wire
+		(pts
 			(xy 73.66 182.88) (xy 71.12 182.88)
 		)
 		(stroke
@@ -12424,6 +12782,16 @@
 			(type default)
 		)
 		(uuid "d6950bc6-5fff-4773-8cbe-d1a6a10b52c6")
+	)
+	(wire
+		(pts
+			(xy 201.93 229.87) (xy 209.55 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6953088-5291-4847-b7eb-5174c75d4362")
 	)
 	(wire
 		(pts
@@ -12597,6 +12965,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 238.76) (xy 214.63 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4a61a2f-984a-4bcd-937a-1228a36d88ba")
+	)
+	(wire
+		(pts
 			(xy 358.14 104.14) (xy 358.14 99.06)
 		)
 		(stroke
@@ -12604,6 +12982,16 @@
 			(type default)
 		)
 		(uuid "e4ff07dd-87bf-4f13-82ba-25b879c46b78")
+	)
+	(wire
+		(pts
+			(xy 231.14 224.79) (xy 254 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e53d6e91-55ec-4498-a26f-891a0515e71d")
 	)
 	(wire
 		(pts
@@ -13311,7 +13699,7 @@
 	)
 	(global_label "D-"
 		(shape input)
-		(at 201.295 245.745 180)
+		(at 181.61 237.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13321,7 +13709,7 @@
 		)
 		(uuid "1ed87e1f-c8ea-44b5-8d6b-b8ce4c0fba46")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 201.295 245.745 0)
+			(at 181.61 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13330,7 +13718,7 @@
 			)
 		)
 		(property "Referenzen zwischen Schaltplänen" "${INTERSHEET_REFS}"
-			(at 196.1284 245.6656 0)
+			(at 176.4434 237.4106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13621,7 +14009,7 @@
 	)
 	(global_label "PB2"
 		(shape input)
-		(at 221.615 238.125 0)
+		(at 241.3 245.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13631,7 +14019,7 @@
 		)
 		(uuid "2f911227-87c8-4ec9-aca2-d52a44fe1a56")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 221.615 238.125 0)
+			(at 241.3 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13640,7 +14028,7 @@
 			)
 		)
 		(property "Referenzen zwischen Schaltplänen" "${INTERSHEET_REFS}"
-			(at 227.6887 238.0456 0)
+			(at 247.3737 245.0306 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14954,7 +15342,7 @@
 	)
 	(global_label "D+"
 		(shape input)
-		(at 201.295 243.205 180)
+		(at 181.61 234.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14964,7 +15352,7 @@
 		)
 		(uuid "99c1edde-8a63-4c48-8d7a-3037cac350aa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 201.295 243.205 0)
+			(at 181.61 234.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14973,7 +15361,7 @@
 			)
 		)
 		(property "Referenzen zwischen Schaltplänen" "${INTERSHEET_REFS}"
-			(at 196.1284 243.1256 0)
+			(at 176.4434 234.8706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15109,7 +15497,7 @@
 	)
 	(global_label "PB3"
 		(shape input)
-		(at 221.615 235.585 0)
+		(at 241.3 242.57 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15119,7 +15507,7 @@
 		)
 		(uuid "aa089d65-75c2-4694-b74a-7f9ff2b2c37c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 221.615 235.585 0)
+			(at 241.3 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15128,7 +15516,7 @@
 			)
 		)
 		(property "Referenzen zwischen Schaltplänen" "${INTERSHEET_REFS}"
-			(at 227.6887 235.5056 0)
+			(at 247.3737 242.4906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16321,7 +16709,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 211.455 260.985 0)
+		(at 191.77 252.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16330,7 +16718,7 @@
 		(fields_autoplaced yes)
 		(uuid "02b3a5b1-44fc-4e2f-9443-a9310b267d7d")
 		(property "Reference" "#PWR0154"
-			(at 211.455 267.335 0)
+			(at 191.77 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16339,7 +16727,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 211.455 266.065 0)
+			(at 191.77 257.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16347,7 +16735,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 211.455 260.985 0)
+			(at 191.77 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16356,7 +16744,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 211.455 260.985 0)
+			(at 191.77 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16365,7 +16753,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 211.455 260.985 0)
+			(at 191.77 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16675,12 +17063,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -16804,16 +17194,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 137.16 0)
 			(effects
 				(font
@@ -17401,6 +17781,70 @@
 			(project ""
 				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
 					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 254 233.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1547a2a2-9752-459c-8bce-336551630395")
+		(property "Reference" "#PWR04"
+			(at 254 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 254 237.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 254 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d833b55d-de9b-47f7-80de-f4a91232a95d")
+		)
+		(instances
+			(project "design"
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -18069,12 +18513,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\n                        \n                            Connector Header Surface Mount 4 position 0.039 (1.00mm)\n                        \n"
 			(at 81.28 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MF" "JST Sales"
@@ -18158,16 +18604,6 @@
 			)
 		)
 		(property "MP" "BM04B-SRSS-TB(LF)(SN)"
-			(at 81.28 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\n                        \n                            Connector Header Surface Mount 4 position 0.039 (1.00mm)\n                        \n"
 			(at 81.28 251.46 0)
 			(effects
 				(font
@@ -18392,7 +18828,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 211.455 230.505 0)
+		(at 191.77 222.25 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18401,7 +18837,7 @@
 		(dnp no)
 		(uuid "266660af-6a0a-418f-bbc8-739b42844442")
 		(property "Reference" "#PWR0153"
-			(at 211.455 234.315 0)
+			(at 191.77 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18410,7 +18846,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 215.265 228.6 0)
+			(at 195.58 220.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18418,7 +18854,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 211.455 230.505 0)
+			(at 191.77 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18427,7 +18863,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 211.455 230.505 0)
+			(at 191.77 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18436,7 +18872,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 211.455 230.505 0)
+			(at 191.77 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18694,12 +19130,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -18823,16 +19261,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 137.16 0)
 			(effects
 				(font
@@ -19633,6 +20061,70 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 214.63 240.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "345b2674-769c-4b3a-8972-036ac2a13803")
+		(property "Reference" "#PWR01"
+			(at 214.63 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 214.63 243.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 214.63 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 214.63 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e73a245f-8536-442f-9f06-99e947731bcf")
+		)
+		(instances
+			(project "design"
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 33.02 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -20107,12 +20599,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -20236,16 +20730,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 198.12 0)
 			(effects
 				(font
@@ -20489,12 +20973,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -20618,16 +21104,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 157.48 0)
 			(effects
 				(font
@@ -20986,15 +21462,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 203.835 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" "Texas Instruments"
+		(property "Description" "1.6-V to 5.5-V, 40-mΩ, 2.5-A, low-IQ, dual ideal diode"
 			(at 203.835 189.23 0)
 			(effects
 				(font
@@ -21004,7 +21472,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "\n                        \n                            1.6-V to 5.5-V, 40-mΩ, 2.5-A, low-IQ, dual ideal diode\n                        \n"
+		(property "MF" "Texas Instruments"
 			(at 203.835 189.23 0)
 			(effects
 				(font
@@ -21631,12 +22099,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -21760,16 +22230,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 116.84 0)
 			(effects
 				(font
@@ -22110,12 +22570,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -22239,16 +22701,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 96.52 0)
 			(effects
 				(font
@@ -22448,7 +22900,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 231.775 253.365 0)
+		(at 154.94 241.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22457,7 +22909,7 @@
 		(fields_autoplaced yes)
 		(uuid "5caca7b8-1bca-4e6e-adf8-b2c02b444222")
 		(property "Reference" "C5"
-			(at 234.95 252.1012 0)
+			(at 158.115 240.0362 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22466,7 +22918,7 @@
 			)
 		)
 		(property "Value" "0.1uF 50V X7R ±10%"
-			(at 234.95 254.6412 0)
+			(at 158.115 242.5762 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22475,7 +22927,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22484,7 +22936,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22493,7 +22945,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22501,7 +22953,7 @@
 			)
 		)
 		(property "JLCPCB" "C28323"
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22510,7 +22962,7 @@
 			)
 		)
 		(property "LCSC Part" "C28323"
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22519,7 +22971,7 @@
 			)
 		)
 		(property "MANUFACTURER_PART_NUMBER" "CL21B105KBFNNNE"
-			(at 231.775 253.365 0)
+			(at 154.94 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22843,12 +23295,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -22972,16 +23426,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 177.8 0)
 			(effects
 				(font
@@ -23225,12 +23669,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -23354,16 +23800,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 116.84 0)
 			(effects
 				(font
@@ -24158,12 +24594,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -24287,16 +24725,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 198.12 0)
 			(effects
 				(font
@@ -24606,12 +25034,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -24735,16 +25165,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 76.2 0)
 			(effects
 				(font
@@ -25075,7 +25495,7 @@
 	)
 	(symbol
 		(lib_id "Interface_USB:CH340K")
-		(at 212.09 246.38 0)
+		(at 191.77 237.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25084,7 +25504,7 @@
 		(fields_autoplaced yes)
 		(uuid "88e7ed62-ed95-42e4-bf83-b36a6c97f7c6")
 		(property "Reference" "U5"
-			(at 214.2333 261.62 0)
+			(at 193.9133 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25093,7 +25513,7 @@
 			)
 		)
 		(property "Value" "CH340K"
-			(at 214.2333 264.16 0)
+			(at 193.9133 255.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25102,7 +25522,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SSOP-10-1EP_3.9x4.9mm_P1mm_EP2.1x3.3mm"
-			(at 213.36 260.35 0)
+			(at 193.04 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25112,7 +25532,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.sparkfun.com/assets/5/0/a/8/5/CH340DS1.PDF"
-			(at 203.2 226.06 0)
+			(at 182.88 217.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25121,7 +25541,7 @@
 			)
 		)
 		(property "Description" "USB serial converter, UART, SSOP-10"
-			(at 212.09 246.38 0)
+			(at 191.77 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25792,6 +26212,71 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 231.14 250.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "92871ab0-3a31-4ef7-bdb6-4043e68dd570")
+		(property "Reference" "#PWR02"
+			(at 231.14 256.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 231.14 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 250.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 250.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 231.14 250.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "05f62e8a-5fb6-4b59-a62b-d206f449924f")
+		)
+		(instances
+			(project "design"
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 255.778 82.042 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26259,12 +26744,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -26397,16 +26884,6 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
-			(at 325.12 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Availability" "Not in stock"
 			(at 325.12 157.48 0)
 			(effects
@@ -26526,6 +27003,99 @@
 			(project ""
 				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
 					(reference "#PWR0199")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Interface_USB:TS3USB30ERSWR")
+		(at 231.14 240.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e011f5d-0ddd-4cdf-af3e-d78ff6456535")
+		(property "Reference" "U3"
+			(at 233.172 229.362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TS3USB30ERSWR"
+			(at 233.172 231.394 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:UQFN-10_1.4x1.8mm_P0.4mm"
+			(at 255.27 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts3usb30e.pdf"
+			(at 231.14 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESD-Protected, High-Speed USB 2.0 (480-Mbps) 1:2 Multiplexer/Demultiplexer Switch With Single Enable, UQFN-10"
+			(at 231.14 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "b6e2c63b-2123-4491-84bb-ac9051676def")
+		)
+		(pin "6"
+			(uuid "b4042b32-8529-4fab-aad1-16e9e6d6257f")
+		)
+		(pin "4"
+			(uuid "01b052c6-0a86-40f9-a328-76feb580bb62")
+		)
+		(pin "1"
+			(uuid "60b223da-ae2e-49c0-b247-591aac7a9c76")
+		)
+		(pin "8"
+			(uuid "08a80914-5f97-4e51-9992-47df1cee4bad")
+		)
+		(pin "3"
+			(uuid "f566bad5-fa11-46ba-9420-886e8bf069c6")
+		)
+		(pin "10"
+			(uuid "0d99c005-444d-4267-8afb-5aba8438ac57")
+		)
+		(pin "2"
+			(uuid "d41b0bb6-9252-4a95-bb24-cb709cadebbe")
+		)
+		(pin "7"
+			(uuid "34da1409-d3dd-4d33-85bc-c80d93dad6e7")
+		)
+		(pin "5"
+			(uuid "cb1fdc10-4cc8-442d-be44-facba11f0be8")
+		)
+		(instances
+			(project ""
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -26838,12 +27408,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -26967,16 +27539,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 55.88 0)
 			(effects
 				(font
@@ -27301,7 +27863,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 208.915 230.505 0)
+		(at 189.23 222.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -27309,7 +27871,7 @@
 		(dnp no)
 		(uuid "ab47a972-ff3e-48a6-af5e-05953e23c0ff")
 		(property "Reference" "#PWR0138"
-			(at 208.915 234.315 0)
+			(at 189.23 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27318,7 +27880,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 204.47 228.6 0)
+			(at 184.785 220.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27326,7 +27888,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 208.915 230.505 0)
+			(at 189.23 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27335,7 +27897,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 208.915 230.505 0)
+			(at 189.23 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27344,7 +27906,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 208.915 230.505 0)
+			(at 189.23 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27579,7 +28141,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.775 260.985 0)
+		(at 154.94 248.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -27588,7 +28150,7 @@
 		(fields_autoplaced yes)
 		(uuid "ae643d6d-6334-4fa9-8706-f9d7582babde")
 		(property "Reference" "#PWR0152"
-			(at 231.775 267.335 0)
+			(at 154.94 255.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27597,7 +28159,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 231.775 266.065 0)
+			(at 154.94 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27605,7 +28167,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.775 260.985 0)
+			(at 154.94 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27614,7 +28176,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.775 260.985 0)
+			(at 154.94 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27623,7 +28185,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.775 260.985 0)
+			(at 154.94 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28008,12 +28570,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -28137,16 +28701,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 358.14 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 358.14 76.2 0)
 			(effects
 				(font
@@ -28550,12 +29104,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -28679,16 +29235,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 177.8 0)
 			(effects
 				(font
@@ -28952,6 +29498,70 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 231.14 222.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b910c1b2-7e52-4946-a3a0-089b26cba9eb")
+		(property "Reference" "#PWR03"
+			(at 231.14 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 226.695 220.345 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 231.14 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6961e9b9-42a1-4497-baca-8f5142cbd91b")
+		)
+		(instances
+			(project "design"
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Snapeda:RCWCTE")
 		(at 233.68 78.74 0)
 		(unit 1)
@@ -29079,7 +29689,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 231.775 245.745 0)
+		(at 154.94 233.68 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -29088,7 +29698,7 @@
 		(dnp no)
 		(uuid "ba5716d8-487f-4373-b557-f3065d8c5032")
 		(property "Reference" "#PWR0132"
-			(at 231.775 249.555 0)
+			(at 154.94 237.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29097,7 +29707,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 227.965 244.348 0)
+			(at 151.13 232.283 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29105,7 +29715,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.775 245.745 0)
+			(at 154.94 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29114,7 +29724,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.775 245.745 0)
+			(at 154.94 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29123,7 +29733,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.775 245.745 0)
+			(at 154.94 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29475,12 +30085,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -29604,16 +30216,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 55.88 0)
 			(effects
 				(font
@@ -30081,12 +30683,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nUSB Connectors 24 Receptacle 1 8.94*7.3mm RoHS\n"
 			(at 50.8 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MF" "HRO Electronics Co., Ltd."
@@ -30170,16 +30774,6 @@
 			)
 		)
 		(property "MP" "TYPE-C-31-M-12"
-			(at 50.8 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nUSB Connectors 24 Receptacle 1 8.94*7.3mm RoHS\n"
 			(at 50.8 38.1 0)
 			(effects
 				(font
@@ -30744,6 +31338,102 @@
 			(project ""
 				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
 					(reference "#PWR0174")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 254 231.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cd374c05-8807-40c3-a717-ac1cd7853e23")
+		(property "Reference" "C6"
+			(at 257.175 229.8762 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF 50V X7R ±10%"
+			(at 257.175 232.4162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C28323"
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C28323"
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" "CL21B105KBFNNNE"
+			(at 254 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d20520ee-860d-4d36-998c-21420b9454cb")
+		)
+		(pin "2"
+			(uuid "6960ae62-2bb8-41b0-bc1b-31135b52bdb5")
+		)
+		(instances
+			(project "design"
+				(path "/46918595-4a45-48e8-84c0-961b4db7f35f"
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -31693,12 +32383,14 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
+				(hide yes)
 			)
 		)
 		(property "MANUFACTURER_NAME" "Worldsemi"
@@ -31822,16 +32514,6 @@
 			)
 		)
 		(property "ARROW_PART_NUMBER" ""
-			(at 325.12 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "\nLED; SMD; 2020; RGB; 2x2x0.84mm; 3.7÷5.3V; Lens: transparent; 2kHz\n"
 			(at 325.12 96.52 0)
 			(effects
 				(font
