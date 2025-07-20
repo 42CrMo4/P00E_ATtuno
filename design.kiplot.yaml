@@ -188,7 +188,7 @@ outputs:
     type: diff
     layers: ['F.Cu', 'B.Cu']
     options:
-      old: v2.1
+      old: v3.1
       old_type: git
       new: HEAD
       new_type: git
