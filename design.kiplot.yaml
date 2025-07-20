@@ -47,6 +47,8 @@ groups:
       - 3dview
       - diff_pcb
       - diff_sch
+      - diff_sch_v3.1
+      - diff_pcb_v3.1
 
 outputs:
 
@@ -181,25 +183,25 @@ outputs:
       diff_mode: red_green
       pcb: false
 
-  - name: 'diff_pcb_v2.0'
+  - name: 'diff_pcb_v3.1'
     comment: "PCB difference with git HEAD"
     type: diff
     layers: ['F.Cu', 'B.Cu']
     options:
-      old: v2.0
+      old: v2.1
       old_type: git
       new: HEAD
       new_type: git
       cache_dir: .cache
       add_link_id: true
       diff_mode: red_green
-      output: Diff-v2.0-PCB.pdf
+      output: Diff-v3.1-PCB.pdf
 
-  - name: 'diff_sch_v2.0'
+  - name: 'diff_sch_v3.1'
     comment: "SCH difference with git HEAD"
     type: diff
     options:
-      old: v2.0
+      old: v3.1
       old_type: git
       new: HEAD
       new_type: git
@@ -207,7 +209,7 @@ outputs:
       add_link_id: true
       diff_mode: red_green
       pcb: false
-      output: Diff-v2.0-SCH.pdf
+      output: Diff-v3.1-SCH.pdf
 
 #Position Files
   - name: 'position'
