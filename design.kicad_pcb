@@ -19484,7 +19484,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 270)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "24721f22-3821-4b24-ab29-6f5875ea46bb")
